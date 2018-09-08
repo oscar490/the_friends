@@ -9,6 +9,8 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\bootstrap\ActiveForm;
+use app\models\LoginForm;
 
 AppAsset::register($this);
 ?>
@@ -28,6 +30,8 @@ AppAsset::register($this);
 
 <div class="wrap">
     <?php
+
+    $model = new LoginForm();
     NavBar::begin([
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
@@ -35,7 +39,7 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-
+    /**
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
@@ -56,7 +60,36 @@ AppAsset::register($this);
             )
         ],
     ]);
+	**/
+	$form = ActiveForm::begin([
+		'id' => 'login-form',
+		'options'=>[
+			'class'=>'navbar-form navbar-right'
+		]
+	]);
+	?>
+		
+			<?= $form->field($model, 'username')->textinput(['placeholder' => 'Usuario'])->label(false) ?>
+		
 
+		
+			<?= $form->field($model, 'password')->passwordInput(['placeholder' => 'Contraseña'])->label(false) ?>
+		
+
+		<?= 
+			Html::submitButton(
+				Html::tag(
+					'span',
+					'',
+					['class' =>'glyphicon glyphicon-log-in' ]
+				),
+				['class' => 'btn btn-success']
+			) 
+		?>
+	<?php
+
+	ActiveForm::end();
+	
     NavBar::end();
     ?>
 

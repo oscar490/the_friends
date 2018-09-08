@@ -134,3 +134,11 @@ ul.navbar-nav > li > a, p.pull-left {
     font-weight: 600 !important;
     color: white;
 }
+
+form.navbar-form {
+    margin-bottom: 0px;
+}
+
+form.navbar-form > button.btn-success {
+    margin-top: -10px;
+}
