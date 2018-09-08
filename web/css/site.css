@@ -113,3 +113,24 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+/* Mis estilos */
+
+nav.navbar-inverse, footer.footer {
+    background-color: #365899 !important;
+}
+
+.navbar-brand {
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    color: white !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #7389b5 !important;
+}
+
+ul.navbar-nav > li > a, p.pull-left {
+    font-weight: 600 !important;
+    color: white;
+}
