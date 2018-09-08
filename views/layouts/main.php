@@ -69,7 +69,7 @@ AppAsset::register($this);
 	]);
 	?>
 		
-			<?= $form->field($model, 'username')->textinput(['placeholder' => 'Usuario'])->label(false) ?>
+			<?= $form->field($model, 'username')->textinput(['placeholder' => 'User'])->label(false) ?>
 		
 
 		
